@@ -5,21 +5,25 @@ defmodule BestGameWeb.NflController do
 
   def index(conn, _params) do
     standings = nfl_standings()
-    # :timer.sleep(1001)
-    # schedule = nfl_schedule()
-    schedule = {}
+    :timer.sleep(1001)
+    schedule = nfl_schedule()
+    # schedule = {}
     render conn, "index.html", nfl_standings: standings, nfl_schedule: schedule
   end
 
   def nfl_standings() do
     url = "#{root_url()}seasons/2018/standings.json?api_key=#{key()}"
-    list = Tuple.to_list(get(url))
-    is_map(List.last(list))
+    parse_tuple(get(url))
   end
 
   def nfl_schedule() do
     url = "#{root_url()}games/2018/REG/4/schedule.json?api_key=#{key()}"
-    is_tuple(get(url))
+    parse_tuple(get(url))
+  end
+
+  def parse_tuple(tuple) do
+    list = Tuple.to_list(tuple)
+    List.last(list)
   end
 
   def root_url() do
