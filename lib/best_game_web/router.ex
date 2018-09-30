@@ -17,5 +17,7 @@ defmodule BestGameWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    get "/nfl", NflController, :index
   end
 end
