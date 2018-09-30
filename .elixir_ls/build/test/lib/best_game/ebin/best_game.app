@@ -10,8 +10,6 @@
                         'Elixir.BestGameWeb.ErrorHelpers',
                         'Elixir.BestGameWeb.ErrorView',
                         'Elixir.BestGameWeb.Gettext',
-                        'Elixir.BestGameWeb.HelloController',
-                        'Elixir.BestGameWeb.HelloView',
                         'Elixir.BestGameWeb.LayoutView',
                         'Elixir.BestGameWeb.PageController',
                         'Elixir.BestGameWeb.PageView',
