@@ -19,7 +19,7 @@ defmodule BestGame.Mixfile do
   def application do
     [
       mod: {BestGame.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :httpoison]
     ]
   end
 
@@ -37,7 +37,8 @@ defmodule BestGame.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:httpoison, "~> 1.0"}
     ]
   end
 end
