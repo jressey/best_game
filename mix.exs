@@ -19,7 +19,7 @@ defmodule BestGame.Mixfile do
   def application do
     [
       mod: {BestGame.Application, []},
-      extra_applications: [:logger, :runtime_tools, :httpoison]
+      extra_applications: [:logger, :runtime_tools, :httpoison, :oauth2]
     ]
   end
 
@@ -38,7 +38,8 @@ defmodule BestGame.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:httpoison, "~> 1.0"}
+      {:httpoison, "~> 1.0"},
+      {:oauth2, "~> 0.9"}
     ]
   end
 end

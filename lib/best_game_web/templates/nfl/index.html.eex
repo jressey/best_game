@@ -1,1 +1,1 @@
-Nfl shiz and <%= inspect @foo %>
+"NFL" Data: <%= inspect @nfl_data %>
