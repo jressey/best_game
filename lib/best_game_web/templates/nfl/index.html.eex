@@ -1,6 +1,8 @@
 <%= for item <- @nfl_schedule do %>
   <p>Home: <%= item[:home][:alias] %></p>
   <p>Away: <%= item[:away][:alias] %></p>
+  <p>Game: <%= inspect item %></p>
+
   <hr />
   <br />
 <% end %>

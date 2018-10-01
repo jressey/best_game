@@ -6,7 +6,7 @@ defmodule BestGameWeb.NflController do
     # :timer.sleep(1001)
     schedule = nfl_schedule()
     standings = {}
-    render conn, "index.html", nfl_standings: standings, nfl_schedule: schedule
+    render conn, :index, nfl_standings: standings, nfl_schedule: schedule
   end
 
   def nfl_standings() do

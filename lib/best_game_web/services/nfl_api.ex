@@ -10,12 +10,12 @@ defmodule NflApi do
 
   def getStandings() do
     url = "#{root_url()}seasons/2018/standings.json?api_key=#{key()}"
-    NflApi.getBody(url)
+    getBody(url)
   end
 
   def getSchedule() do
     url = "#{root_url()}games/2018/REG/4/schedule.json?api_key=#{key()}"
-    NflApi.getBody(url)
+    getBody(url)
   end
 
   def getBody(url) do
