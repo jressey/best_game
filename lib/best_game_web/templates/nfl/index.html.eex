@@ -1,2 +1,6 @@
-<%= inspect @nfl_standings %>
-xxxx <%= inspect @nfl_schedule %>
+<%= for item <- @nfl_schedule do %>
+  <p>Home: <%= item[:home][:alias] %></p>
+  <p>Away: <%= item[:away][:alias] %></p>
+  <hr />
+  <br />
+<% end %>

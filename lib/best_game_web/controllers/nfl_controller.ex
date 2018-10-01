@@ -2,10 +2,10 @@ defmodule BestGameWeb.NflController do
   use BestGameWeb, :controller
 
   def index(conn, _params) do
-    standings = nfl_standings()
-    :timer.sleep(1001)
+    # standings = nfl_standings()
+    # :timer.sleep(1001)
     schedule = nfl_schedule()
-    # schedule = {}
+    standings = {}
     render conn, "index.html", nfl_standings: standings, nfl_schedule: schedule
   end
 
@@ -14,7 +14,8 @@ defmodule BestGameWeb.NflController do
   end
 
   def nfl_schedule() do
-    Nfl.schedule()
+    games = get_in(Nfl.schedule(), [:week, :games])
+    team_pairs = Enum.map(games, fn (x) -> %{away: x[:away], home: x[:home]} end)
+    team_pairs
   end
-
 end
